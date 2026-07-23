@@ -1,0 +1,206 @@
+/* Áp dụng box-sizing cho toàn bộ phần tử */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+
+    color: #17324d;
+    background-color: #f4f7fa;
+}
+
+/* Liên kết Skip to Main Content */
+.skip-link {
+    position: absolute;
+
+    top: -100px;
+    left: 20px;
+
+    z-index: 1000;
+
+    padding: 12px 18px;
+
+    color: #ffffff;
+    background-color: #000000;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 20px;
+}
+
+/* Phần đầu trang */
+header {
+    padding: 30px 20px;
+
+    color: #ffffff;
+    background-color: #17324d;
+
+    text-align: center;
+}
+
+header h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+/* Nội dung chính */
+main {
+    width: 92%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* Khu vực xem trước */
+.image-preview {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 420px;
+
+    margin-bottom: 35px;
+    padding: 30px;
+
+    color: #ffffff;
+    background-color: #294d6e;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: 5px solid #17324d;
+    border-radius: 20px;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+
+    text-shadow:
+        1px 1px 4px #000000,
+        -1px -1px 4px #000000;
+
+    transition:
+        background-image 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* CSS Grid cho thư viện */
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+/* Thiết kế từng figure */
+.gallery figure {
+    margin: 0;
+    padding: 10px;
+
+    background-color: #ffffff;
+
+    border: 3px solid #17324d;
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* Hiệu ứng khi dùng chuột */
+.gallery figure:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Hiệu ứng khi dùng bàn phím */
+.gallery figure:focus {
+    background-color: #fff3bf;
+
+    outline: 5px solid #ff9800;
+    outline-offset: 4px;
+
+    transform: translateY(-7px);
+}
+
+/* Hình ảnh */
+.gallery img {
+    display: block;
+
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+
+    border: 3px solid #294d6e;
+    border-radius: 12px;
+}
+
+/* Chú thích ảnh */
+.gallery figcaption {
+    padding: 12px 5px 5px;
+
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+
+    color: #ffffff;
+    background-color: #17324d;
+
+    text-align: center;
+}
+
+/* Tablet */
+@media screen and (max-width: 800px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .image-preview {
+        min-height: 350px;
+    }
+
+}
+
+/* Điện thoại */
+@media screen and (max-width: 550px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .image-preview {
+        min-height: 280px;
+        font-size: 1.2rem;
+    }
+
+}
